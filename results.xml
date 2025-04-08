@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SquishReport xmlns="http://www.froglogic.com/resources/schemas/xml3" version="3.5">
+    <test type="testsuite">
+        <prolog time="2025-04-03T07:41:17.165824Z">
+            <name><![CDATA[suite_tst_trail]]></name>
+            <location>
+                <uri><![CDATA[file:/home/sneha/Documents/suite_tst_trail/]]></uri>
+            </location>
+        </prolog>
+    <test type="testcase">
+        <prolog time="2025-04-03T07:41:17.673Z">
+            <name>tst_login</name>
+            <location>
+                <uri><![CDATA[x-testsuite:/tst_login]]></uri>
+            </location>
+        </prolog>
+        <test type="section">
+            <prolog time="2025-04-03T07:41:30.699Z">
+                <name>test case 3: username empty</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>50</lineNo>
+                </location>
+            </prolog>
+            <verification>
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>121</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-04-03T07:41:39.033Z" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                        <lineNo>121</lineNo>
+                    </scriptedLocation>
+                    <text>Text verification passed!</text>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-04-03T07:41:39.039Z" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-04-03T07:41:41.320Z"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-04-03T07:41:41.320Z">
+                <name>test case 2: password empty</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>38</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-04-03T07:41:43.802Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>41</lineNo>
+                </location>
+                <text>entered into enter username</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>109</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-04-03T07:41:44.564Z" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                        <lineNo>109</lineNo>
+                    </scriptedLocation>
+                    <text>Text verification passed!</text>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-04-03T07:41:44.569Z" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-04-03T07:41:46.797Z"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-04-03T07:41:46.797Z">
+                <name>test case 4: incorrect username</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>61</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-04-03T07:41:49.302Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>64</lineNo>
+                </location>
+                <text>entered incorrect username.</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>97</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-04-03T07:41:50.318Z" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                        <lineNo>97</lineNo>
+                    </scriptedLocation>
+                    <text>Text verification passed!</text>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-04-03T07:41:50.319Z" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-04-03T07:41:52.718Z"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-04-03T07:41:52.718Z">
+                <name>test case 5: incorrect password</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>73</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-04-03T07:41:55.302Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>76</lineNo>
+                </location>
+                <text>entered incorrect password.</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>97</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-04-03T07:41:56.436Z" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                        <lineNo>97</lineNo>
+                    </scriptedLocation>
+                    <text>Text verification passed!</text>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-04-03T07:41:56.437Z" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-04-03T07:41:58.796Z"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-04-03T07:41:58.796Z">
+                <name>test case 6: incorrect credentials</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>85</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-04-03T07:42:00.796Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>87</lineNo>
+                </location>
+                <text>entered incorrect username and password.</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>97</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-04-03T07:42:02.429Z" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                        <lineNo>97</lineNo>
+                    </scriptedLocation>
+                    <text>Text verification passed!</text>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-04-03T07:42:02.429Z" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-04-03T07:42:04.797Z"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-04-03T07:42:04.797Z">
+                <name>test case 1: positive test scenario with valid credentials</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>24</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-04-03T07:42:06.797Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>26</lineNo>
+                </location>
+                <text>Step 1: Enter username ADMIN</text>
+            </message>
+            <message time="2025-04-03T07:42:07.302Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>28</lineNo>
+                </location>
+                <text>Step 2: Enter password Emerson@1</text>
+            </message>
+            <message time="2025-04-03T07:42:07.806Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>30</lineNo>
+                </location>
+                <text>Step 3: Click on Login button.</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/dashboard.py]]></uri>
+                    <lineNo>9</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-04-03T07:42:28.453Z" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/dashboard.py]]></uri>
+                        <lineNo>9</lineNo>
+                    </scriptedLocation>
+                    <text>Logged in successfully</text>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-04-03T07:42:29.226Z" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/dashboard.py]]></uri>
+                    <lineNo>10</lineNo>
+                </location>
+                <text>Dashboard is visible</text>
+            </message>
+            <message time="2025-04-03T07:42:29.226Z" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>33</lineNo>
+                </location>
+                <text>Expected Result: Admin user with valid credentials shall get logged in to the system</text>
+            </message>
+            <epilog time="2025-04-03T07:42:31.297Z"></epilog>
+        </test>
+        <epilog time="2025-04-03T07:42:31.297Z"></epilog>
+    </test>
+
+        <epilog time="2025-04-03T07:42:33.508404Z"></epilog>
+    </test>
+</SquishReport>
