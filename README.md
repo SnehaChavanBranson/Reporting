@@ -26,6 +26,7 @@ This Script is given to convert xml to excel sheet
 🚀 Getting Started
 
   ```bash
+    #Need to have python installed on your system.
     #Install the application
     git clone git@github.com:SnehaChavanBranson/Reporting.git
 
