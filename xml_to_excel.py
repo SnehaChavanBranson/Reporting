@@ -8,9 +8,13 @@ from openpyxl.chart.label import DataLabelList
 from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 
+# Ask user if they want to include logs for all tests or only failed ones
+user_input = input("Do you want to include logs for all test cases? (y/N): ").strip().lower()
+include_all_logs = user_input == "y"
+
+
 tree = ET.parse("results.xml")
 root = tree.getroot()
-
 namespaces = {"": "http://www.froglogic.com/resources/schemas/xml3"}
 
 data = []
@@ -29,6 +33,7 @@ for test in root.findall(".//test", namespaces):
 
     testcase = {}
     testcase["Serial Number"] = serial_number
+    test_id["test id"] = test_id
     serial_number += 1
     testcase["Test Case Name"] = test_name
     testcase["Status"] = "Unknown"
@@ -58,7 +63,11 @@ for test in root.findall(".//test", namespaces):
     if testcase["Status"] == "Unknown":
         testcase["Status"] = "FAIL"
 
-    testcase["Logs"] = "\n".join(logs)
+    if include_all_logs or testcase["Status"] == "FAIL":
+        testcase["Logs"] = "\n".join(logs)
+    else:
+        testcase["Logs"] = ""
+
     testcase["Comments"] = ""
     data.append(testcase)
 
@@ -69,34 +78,35 @@ fail_count = df[df["Status"] == "FAIL"].shape[0]
 total_tests = df.shape[0]
 
 module_name = "Login"
-
 summary_data = {"Module Name": [module_name], "Total Test Cases": [total_tests], "Pass": [pass_count], "Fail": [fail_count]}
 summary_df = pd.DataFrame(summary_data)
 
 wb = Workbook()
-
 ws_test_cases = wb.active
 ws_test_cases.title = "Test Cases"
+
 for r in dataframe_to_rows(df, index=False, header=True):
     ws_test_cases.append(r)
 
+# Style header
 header_fill = PatternFill(start_color="ADD8E6", end_color="ADD8E6", fill_type="solid")
 bold_font = Font(bold=True, color="FFFFFF")
-
 for cell in ws_test_cases[1]:
     cell.fill = header_fill
     cell.font = bold_font
 
+# Wrap logs column
 for row in ws_test_cases.iter_rows(min_row=2, min_col=7, max_col=7):
     for cell in row:
         cell.alignment = Alignment(wrap_text=True)
 
+# Add borders
 thin_border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
-
 for row in ws_test_cases.iter_rows(min_row=1, min_col=1, max_row=ws_test_cases.max_row, max_col=ws_test_cases.max_column):
     for cell in row:
         cell.border = thin_border
 
+# Highlight PASS/FAIL
 pass_fill = PatternFill(start_color="228B22", end_color="228B22", fill_type="solid")
 fail_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
 bold_font_pass_fail = Font(bold=True)
@@ -110,10 +120,17 @@ for row in ws_test_cases.iter_rows(min_row=2, min_col=3, max_col=3):
             cell.fill = fail_fill
             cell.font = bold_font_pass_fail
 
+# Create summary worksheet
 ws_summary = wb.create_sheet("Summary")
 for r in dataframe_to_rows(summary_df, index=False, header=True):
     ws_summary.append(r)
 
+# Append chart data
+ws_summary.append(["Status", "Count"])
+ws_summary.append(["Pass", pass_count])
+ws_summary.append(["Fail", fail_count])
+
+# Add bar chart
 chart = BarChart()
 chart.type = "col"
 chart.title = "Pass/Fail Test Cases"
@@ -121,17 +138,12 @@ chart.style = 10
 chart.x_axis.title = "Status"
 chart.y_axis.title = "Test Cases"
 
-data = [["Pass", pass_count], ["Fail", fail_count]]
-ws_summary.append(["Status", "Count"])
-for row in data:
-    ws_summary.append(row)
-
 data_ref = Reference(ws_summary, min_col=2, min_row=2, max_col=2, max_row=3)
 categories_ref = Reference(ws_summary, min_col=1, min_row=2, max_row=3)
-
 chart.add_data(data_ref, titles_from_data=True)
 chart.set_categories(categories_ref)
 
+# Show values on bars
 for series in chart.series:
     series.dLbls = DataLabelList()
     series.dLbls.show_val = True
@@ -139,6 +151,7 @@ for series in chart.series:
 
 ws_summary.add_chart(chart, "E5")
 
+# Save the file
 wb.save("test_report_with_times.xlsx")
 
 print("Excel file with a bar graph displaying Pass and Fail test cases and numbers created successfully!")
