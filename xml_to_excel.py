@@ -1,157 +1,159 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
-import re
 from datetime import datetime
 from openpyxl import Workbook
+from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.chart import BarChart, Reference
 from openpyxl.chart.label import DataLabelList
-from openpyxl.utils.dataframe import dataframe_to_rows
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 
 # Ask user if they want to include logs for all tests or only failed ones
 user_input = input("Do you want to include logs for all test cases? (y/N): ").strip().lower()
 include_all_logs = user_input == "y"
 
-
 tree = ET.parse("results.xml")
 root = tree.getroot()
 namespaces = {"": "http://www.froglogic.com/resources/schemas/xml3"}
 
-data = []
-
 
 def convert_to_datetime(time_str):
-    return datetime.strptime(time_str, "%Y-%m-%dT%H:%M:%S.%fZ")
+    return datetime.strptime(time_str.replace("+05:30", "").replace("Z", ""), "%Y-%m-%dT%H:%M:%S.%f")
 
 
+results_by_module = {}
 serial_number = 1
-for test in root.findall(".//test", namespaces):
-    test_name = test.find(".//prolog/name", namespaces).text.strip()
 
-    if not re.search(r"test case \d+", test_name, re.IGNORECASE):
-        continue
+for testcase in root.findall(".//test[@type='testcase']", namespaces):
+    module_name = None
+    for log in testcase.findall(".//message", namespaces):
+        if log.find("text", namespaces) is not None:
+            msg_text = log.find("text", namespaces).text.strip()
+            if msg_text.lower() in ["login", "recipe"]:
+                module_name = msg_text
+                break
+    module_name = module_name or "Unknown"
 
-    testcase = {}
-    testcase["Serial Number"] = serial_number
-    test_id["test id"] = test_id
-    serial_number += 1
-    testcase["Test Case Name"] = test_name
-    testcase["Status"] = "Unknown"
+    for section in testcase.findall(".//test[@type='section']", namespaces):
+        test_name = section.find("prolog/name", namespaces).text
+        start_time = section.find("prolog", namespaces).attrib["time"]
+        end_time = section.find("epilog", namespaces).attrib["time"]
+        start_dt = convert_to_datetime(start_time)
+        end_dt = convert_to_datetime(end_time)
 
-    start_time_str = test.find(".//prolog", namespaces).attrib.get("time")
-    end_time_str = test.find(".//epilog", namespaces).attrib.get("time")
+        logs = []
+        for message in section.findall(".//message", namespaces):
+            if message.find("text", namespaces) is not None:
+                logs.append(message.find("text", namespaces).text.strip())
 
-    start_time = convert_to_datetime(start_time_str)
-    end_time = convert_to_datetime(end_time_str)
-    total_time = (end_time - start_time).total_seconds()
+        verification = section.find(".//verification/scriptedVerificationResult", namespaces)
+        status = verification.attrib["type"] if verification is not None else "FAIL"
 
-    testcase["Start Time"] = start_time_str
-    testcase["End Time"] = end_time_str
-    testcase["Total Time (seconds)"] = total_time
+        result = {
+            "Sr No.": serial_number,
+            "Test Case Name": test_name,
+            "Start Time": start_time,
+            "End Time": end_time,
+            "Total Time (seconds)": (end_dt - start_dt).total_seconds(),
+            "Status": status,
+            "Logs": "\n".join(logs) if include_all_logs or status == "FAIL" else "",
+            "Comments": "",
+        }
+        results_by_module.setdefault(module_name, []).append(result)
+        serial_number += 1
 
-    logs = []
-    for message in test.findall(".//message", namespaces):
-        text = message.find("text", namespaces).text.strip()
-        logs.append(text)
-
-    verification = test.find(".//verification", namespaces)
-    if verification is not None:
-        result = verification.find(".//scriptedVerificationResult", namespaces)
-        if result is not None:
-            testcase["Status"] = result.attrib["type"]
-
-    if testcase["Status"] == "Unknown":
-        testcase["Status"] = "FAIL"
-
-    if include_all_logs or testcase["Status"] == "FAIL":
-        testcase["Logs"] = "\n".join(logs)
-    else:
-        testcase["Logs"] = ""
-
-    testcase["Comments"] = ""
-    data.append(testcase)
-
-df = pd.DataFrame(data)
-
-pass_count = df[df["Status"] == "PASS"].shape[0]
-fail_count = df[df["Status"] == "FAIL"].shape[0]
-total_tests = df.shape[0]
-
-module_name = "Login"
-summary_data = {"Module Name": [module_name], "Total Test Cases": [total_tests], "Pass": [pass_count], "Fail": [fail_count]}
-summary_df = pd.DataFrame(summary_data)
-
+# Create workbook
 wb = Workbook()
-ws_test_cases = wb.active
-ws_test_cases.title = "Test Cases"
+del wb["Sheet"]
 
-for r in dataframe_to_rows(df, index=False, header=True):
-    ws_test_cases.append(r)
-
-# Style header
-header_fill = PatternFill(start_color="ADD8E6", end_color="ADD8E6", fill_type="solid")
-bold_font = Font(bold=True, color="FFFFFF")
-for cell in ws_test_cases[1]:
-    cell.fill = header_fill
-    cell.font = bold_font
-
-# Wrap logs column
-for row in ws_test_cases.iter_rows(min_row=2, min_col=7, max_col=7):
-    for cell in row:
-        cell.alignment = Alignment(wrap_text=True)
-
-# Add borders
-thin_border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
-for row in ws_test_cases.iter_rows(min_row=1, min_col=1, max_row=ws_test_cases.max_row, max_col=ws_test_cases.max_column):
-    for cell in row:
-        cell.border = thin_border
-
-# Highlight PASS/FAIL
+# Define styles
+header_fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
 pass_fill = PatternFill(start_color="228B22", end_color="228B22", fill_type="solid")
 fail_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
-bold_font_pass_fail = Font(bold=True)
+bold_font_white = Font(bold=True, color="FFFFFF")
+bold_font = Font(bold=True)
+thin_border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
 
-for row in ws_test_cases.iter_rows(min_row=2, min_col=3, max_col=3):
-    for cell in row:
-        if cell.value == "PASS":
-            cell.fill = pass_fill
-            cell.font = bold_font_pass_fail
-        elif cell.value == "FAIL":
-            cell.fill = fail_fill
-            cell.font = bold_font_pass_fail
+summary_data = []
 
-# Create summary worksheet
+# Create individual module sheets
+for module, records in results_by_module.items():
+    df = pd.DataFrame(records)
+    pass_count = (df["Status"] == "PASS").sum()
+    fail_count = (df["Status"] == "FAIL").sum()
+    summary_data.append({"Module Name": module, "Total Test Cases": len(df), "Pass": pass_count, "Fail": fail_count})
+
+    ws = wb.create_sheet(module)
+    for r in dataframe_to_rows(df, index=False, header=True):
+        ws.append(r)
+
+    for cell in ws[1]:
+        cell.fill = header_fill
+        cell.font = bold_font_white
+        cell.alignment = Alignment(horizontal="center")
+
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=ws.max_column):
+        for cell in row:
+            cell.border = thin_border
+
+    for row in ws.iter_rows(min_row=2, min_col=6, max_col=6):  # Status Column
+        for cell in row:
+            if cell.value == "PASS":
+                cell.fill = pass_fill
+                cell.font = bold_font
+            elif cell.value == "FAIL":
+                cell.fill = fail_fill
+                cell.font = bold_font
+
+# Create Summary Sheet
+summary_df = pd.DataFrame(summary_data)
 ws_summary = wb.create_sheet("Summary")
 for r in dataframe_to_rows(summary_df, index=False, header=True):
     ws_summary.append(r)
 
-# Append chart data
-ws_summary.append(["Status", "Count"])
-ws_summary.append(["Pass", pass_count])
-ws_summary.append(["Fail", fail_count])
+# Style summary headers
+for cell in ws_summary[1]:
+    cell.fill = header_fill
+    cell.font = bold_font_white
+    cell.alignment = Alignment(horizontal="center")
 
-# Add bar chart
+# Color specific columns
+ws_summary["C1"].fill = pass_fill  # Pass = Green
+ws_summary["D1"].fill = fail_fill  # Fail = Red
+
+# Center-align and border summary data
+for row in ws_summary.iter_rows(min_row=2, max_row=ws_summary.max_row, min_col=1, max_col=4):
+    for cell in row:
+        cell.alignment = Alignment(horizontal="center")
+        cell.border = thin_border
+
+# Add total row
+ws_summary.append([""])
+total_row = ["Total", sum(x["Total Test Cases"] for x in summary_data), sum(x["Pass"] for x in summary_data), sum(x["Fail"] for x in summary_data)]
+ws_summary.append(total_row)
+
+# Bold total row
+for cell in ws_summary[ws_summary.max_row]:
+    cell.font = Font(bold=True)
+
+# Add chart
 chart = BarChart()
-chart.type = "col"
-chart.title = "Pass/Fail Test Cases"
+chart.title = "Test Results Summary"
+chart.x_axis.title = "Module"
+chart.y_axis.title = "Number of Test Cases"
 chart.style = 10
-chart.x_axis.title = "Status"
-chart.y_axis.title = "Test Cases"
+chart.type = "col"
 
-data_ref = Reference(ws_summary, min_col=2, min_row=2, max_col=2, max_row=3)
-categories_ref = Reference(ws_summary, min_col=1, min_row=2, max_row=3)
+data_ref = Reference(ws_summary, min_col=3, min_row=1, max_col=4, max_row=ws_summary.max_row - 2)
+cat_ref = Reference(ws_summary, min_col=1, min_row=2, max_row=ws_summary.max_row - 2)
 chart.add_data(data_ref, titles_from_data=True)
-chart.set_categories(categories_ref)
+chart.set_categories(cat_ref)
 
-# Show values on bars
 for series in chart.series:
     series.dLbls = DataLabelList()
     series.dLbls.show_val = True
-    series.dLbls.number_format = "0"
 
-ws_summary.add_chart(chart, "E5")
+ws_summary.add_chart(chart, "F2")
 
 # Save the file
-wb.save("test_report_with_times.xlsx")
-
-print("Excel file with a bar graph displaying Pass and Fail test cases and numbers created successfully!")
+wb.save("test_report_with_modules_summary.xlsx")
+print("✅ Excel report 'test_report_with_modules_summary.xlsx' generated successfully!")
