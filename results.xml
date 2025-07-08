@@ -1,258 +1,1074 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SquishReport xmlns="http://www.froglogic.com/resources/schemas/xml3" version="3.5">
     <test type="testsuite">
-        <prolog time="2025-04-03T07:41:17.165824Z">
-            <name><![CDATA[suite_tst_trail]]></name>
+        <prolog time="2025-07-08T14:41:10.324294+05:30">
+            <name><![CDATA[login_recipe]]></name>
             <location>
-                <uri><![CDATA[file:/home/sneha/Documents/suite_tst_trail/]]></uri>
+                <uri><![CDATA[file:/home/branson/login_recipe/]]></uri>
             </location>
         </prolog>
     <test type="testcase">
-        <prolog time="2025-04-03T07:41:17.673Z">
-            <name>tst_login</name>
+        <prolog time="2025-07-08T14:41:10.827+05:30">
+            <name>tst_login_csv</name>
             <location>
-                <uri><![CDATA[x-testsuite:/tst_login]]></uri>
+                <uri><![CDATA[x-testsuite:/tst_login_csv]]></uri>
             </location>
         </prolog>
+        <message time="2025-07-08T14:41:10.952+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>11</lineNo>
+            </location>
+            <text>Started with executing Pre Conditions</text>
+        </message>
+        <message time="2025-07-08T14:41:12.480+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>13</lineNo>
+            </location>
+            <text>Completed with executing Pre Conditions</text>
+        </message>
+        <message time="2025-07-08T14:41:12.481+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/helper/core.py]]></uri>
+                <lineNo>79</lineNo>
+            </location>
+            <text>Login</text>
+        </message>
+        <message time="2025-07-08T14:41:12.481+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>56</lineNo>
+            </location>
+            <text>Starting login test cases</text>
+        </message>
         <test type="section">
-            <prolog time="2025-04-03T07:41:30.699Z">
-                <name>test case 3: username empty</name>
+            <prolog time="2025-07-08T14:41:12.481+05:30">
+                <name>Login Test - User: admin, Pass: EMPTY</name>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>50</lineNo>
+                    <lineNo>66</lineNo>
                 </location>
             </prolog>
+            <message time="2025-07-08T14:41:12.481+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>21</lineNo>
+                </location>
+                <text>Entered username: "admin"</text>
+            </message>
+            <message time="2025-07-08T14:41:21.023+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>25</lineNo>
+                </location>
+                <text>Entered password: ""</text>
+            </message>
+            <message time="2025-07-08T14:41:22.868+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>36</lineNo>
+                </location>
+                <text>Expected message: Password is Empty</text>
+            </message>
             <verification>
                 <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>121</lineNo>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
                 </location>
-                <scriptedVerificationResult time="2025-04-03T07:41:39.033Z" type="PASS">
+                <scriptedVerificationResult time="2025-07-08T14:41:22.869+05:30" type="PASS">
                     <scriptedLocation>
-                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                        <lineNo>121</lineNo>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>37</lineNo>
                     </scriptedLocation>
-                    <text>Text verification passed!</text>
+                    <text>Comparison</text>
+                    <detail>'Password is Empty' and 'Password is Empty' are equal</detail>
                 </scriptedVerificationResult>
             </verification>
-            <message time="2025-04-03T07:41:39.039Z" type="LOG">
+            <message time="2025-07-08T14:41:22.872+05:30" type="LOG">
                 <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>86</lineNo>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>106</lineNo>
                 </location>
                 <text>Clicking on the pop up okay button</text>
             </message>
-            <epilog time="2025-04-03T07:41:41.320Z"></epilog>
+            <epilog time="2025-07-08T14:41:23.148+05:30"></epilog>
         </test>
         <test type="section">
-            <prolog time="2025-04-03T07:41:41.320Z">
-                <name>test case 2: password empty</name>
+            <prolog time="2025-07-08T14:41:23.149+05:30">
+                <name>Login Test - User: EMPTY, Pass: ***</name>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>38</lineNo>
+                    <lineNo>66</lineNo>
                 </location>
             </prolog>
-            <message time="2025-04-03T07:41:43.802Z" type="LOG">
+            <message time="2025-07-08T14:41:23.149+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>21</lineNo>
+                </location>
+                <text>Entered username: ""</text>
+            </message>
+            <message time="2025-07-08T14:41:24.155+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>25</lineNo>
+                </location>
+                <text>Entered password: "admin"</text>
+            </message>
+            <message time="2025-07-08T14:41:25.941+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>36</lineNo>
+                </location>
+                <text>Expected message: User Name is Empty</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:41:25.941+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>37</lineNo>
+                    </scriptedLocation>
+                    <text>Comparison</text>
+                    <detail>'User Name is Empty' and 'User Name is Empty' are equal</detail>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-07-08T14:41:25.945+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>106</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-07-08T14:41:26.217+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:41:26.217+05:30">
+                <name>Login Test - User: emerson, Pass: ***</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>66</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:41:26.217+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>21</lineNo>
+                </location>
+                <text>Entered username: "emerson"</text>
+            </message>
+            <message time="2025-07-08T14:41:27.223+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>25</lineNo>
+                </location>
+                <text>Entered password: "branson"</text>
+            </message>
+            <message time="2025-07-08T14:41:29.039+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>36</lineNo>
+                </location>
+                <text>Expected message: Invalid Username or Password</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:41:29.040+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>37</lineNo>
+                    </scriptedLocation>
+                    <text>Comparison</text>
+                    <detail>'Invalid Username or Password' and 'Invalid Username or Password' are equal</detail>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-07-08T14:41:29.055+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>106</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-07-08T14:41:29.351+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:41:29.351+05:30">
+                <name>Login Test - User: branson, Pass: ***</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>66</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:41:29.351+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>21</lineNo>
+                </location>
+                <text>Entered username: "branson"</text>
+            </message>
+            <message time="2025-07-08T14:41:30.369+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>25</lineNo>
+                </location>
+                <text>Entered password: "identity"</text>
+            </message>
+            <message time="2025-07-08T14:41:32.174+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>36</lineNo>
+                </location>
+                <text>Expected message: Invalid Username or Password</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:41:32.174+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>37</lineNo>
+                    </scriptedLocation>
+                    <text>Comparison</text>
+                    <detail>'Invalid Username or Password' and 'Invalid Username or Password' are equal</detail>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-07-08T14:41:32.190+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>106</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-07-08T14:41:32.499+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:41:32.499+05:30">
+                <name>Login Test - User: EMPTY, Pass: EMPTY</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>66</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:41:32.499+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>21</lineNo>
+                </location>
+                <text>Entered username: ""</text>
+            </message>
+            <message time="2025-07-08T14:41:33.506+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>25</lineNo>
+                </location>
+                <text>Entered password: ""</text>
+            </message>
+            <message time="2025-07-08T14:41:35.292+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>36</lineNo>
+                </location>
+                <text>Expected message: User Name is Empty</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:41:35.292+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>37</lineNo>
+                    </scriptedLocation>
+                    <text>Comparison</text>
+                    <detail>'User Name is Empty' and 'User Name is Empty' are equal</detail>
+                </scriptedVerificationResult>
+            </verification>
+            <message time="2025-07-08T14:41:35.296+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>106</lineNo>
+                </location>
+                <text>Clicking on the pop up okay button</text>
+            </message>
+            <epilog time="2025-07-08T14:41:35.568+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:41:35.568+05:30">
+                <name>Login Test - User: ADMIN, Pass: ***</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>66</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:41:35.569+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>21</lineNo>
+                </location>
+                <text>Entered username: "ADMIN"</text>
+            </message>
+            <message time="2025-07-08T14:41:36.575+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>25</lineNo>
+                </location>
+                <text>Entered password: "Emerson@1"</text>
+            </message>
+            <message time="2025-07-08T14:41:38.377+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>36</lineNo>
+                </location>
+                <text>Expected message: Production</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:41:38.377+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>37</lineNo>
+                    </scriptedLocation>
+                    <text>Comparison</text>
+                    <detail>'Production' and 'Production' are equal</detail>
+                </scriptedVerificationResult>
+            </verification>
+            <epilog time="2025-07-08T14:41:38.405+05:30"></epilog>
+        </test>
+        <message time="2025-07-08T14:41:38.405+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>16</lineNo>
+            </location>
+            <text>Started with executing Post Conditions</text>
+        </message>
+        <message time="2025-07-08T14:41:38.405+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                <lineNo>147</lineNo>
+            </location>
+            <text>Starting to logout from the system</text>
+        </message>
+        <verification>
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                <lineNo>156</lineNo>
+            </location>
+            <scriptedVerificationResult time="2025-07-08T14:41:40.033+05:30" type="PASS">
+                <scriptedLocation>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>156</lineNo>
+                </scriptedLocation>
+                <text>Comparison</text>
+                <detail>'Are you sure want to logout?' and 'Are you sure want to logout?' are equal</detail>
+            </scriptedVerificationResult>
+        </verification>
+        <message time="2025-07-08T14:41:41.339+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                <lineNo>160</lineNo>
+            </location>
+            <text>Completed logout from the system</text>
+        </message>
+        <message time="2025-07-08T14:41:41.340+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>18</lineNo>
+            </location>
+            <text>Completed with executing Post Conditions</text>
+        </message>
+        <epilog time="2025-07-08T14:41:41.340+05:30"></epilog>
+    </test>
+
+    <test type="testcase">
+        <prolog time="2025-07-08T14:41:44.088+05:30">
+            <name>tst_recipe_time_quick_edit_20K</name>
+            <location>
+                <uri><![CDATA[x-testsuite:/tst_recipe_time_quick_edit_20K]]></uri>
+            </location>
+        </prolog>
+        <message time="2025-07-08T14:41:44.214+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>125</lineNo>
+            </location>
+            <text>Starting to log into the system</text>
+        </message>
+        <message time="2025-07-08T14:42:04.627+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>14</lineNo>
+            </location>
+            <text>System logged in successfully!</text>
+        </message>
+        <message time="2025-07-08T14:42:04.639+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/helper/core.py]]></uri>
+                <lineNo>79</lineNo>
+            </location>
+            <text>Recipe</text>
+        </message>
+        <message time="2025-07-08T14:42:04.640+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>129</lineNo>
+            </location>
+            <text>Completed the notifications pop skipping</text>
+        </message>
+        <message time="2025-07-08T14:42:06.540+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>23</lineNo>
+            </location>
+            <text>Started with creation of new recipe</text>
+        </message>
+        <message time="2025-07-08T14:42:08.867+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>52</lineNo>
+            </location>
+            <text>clicked on the dashboard</text>
+        </message>
+        <message time="2025-07-08T14:42:15.540+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>56</lineNo>
+            </location>
+            <text>Clicked on the recipes of the left panel</text>
+        </message>
+        <message time="2025-07-08T14:42:15.541+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>57</lineNo>
+            </location>
+            <text>trying to enter recipe swipe view</text>
+        </message>
+        <message time="2025-07-08T14:42:16.467+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>61</lineNo>
+            </location>
+            <text>Clicked on the plus sign of recipe creation</text>
+        </message>
+        <test type="section">
+            <prolog time="2025-07-08T14:42:19.540+05:30">
+                <name>Test 20k_Default Displayed Value</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>33</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:42:19.540+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>34</lineNo>
+                </location>
+                <text>Testing 20k_Default: 0.010</text>
+            </message>
+            <message time="2025-07-08T14:42:19.549+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>37</lineNo>
+                </location>
+                <text>Checking if the default value matches with the actual data</text>
+            </message>
+            <verification>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
                     <lineNo>41</lineNo>
                 </location>
-                <text>entered into enter username</text>
-            </message>
-            <verification>
-                <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>109</lineNo>
-                </location>
-                <scriptedVerificationResult time="2025-04-03T07:41:44.564Z" type="PASS">
+                <scriptedVerificationResult time="2025-07-08T14:42:19.549+05:30" type="PASS">
                     <scriptedLocation>
-                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                        <lineNo>109</lineNo>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>41</lineNo>
                     </scriptedLocation>
-                    <text>Text verification passed!</text>
+                    <text>Displayed value matches expected default: 0.010</text>
                 </scriptedVerificationResult>
             </verification>
-            <message time="2025-04-03T07:41:44.569Z" type="LOG">
-                <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>86</lineNo>
-                </location>
-                <text>Clicking on the pop up okay button</text>
-            </message>
-            <epilog time="2025-04-03T07:41:46.797Z"></epilog>
+            <epilog time="2025-07-08T14:42:19.549+05:30"></epilog>
         </test>
         <test type="section">
-            <prolog time="2025-04-03T07:41:46.797Z">
-                <name>test case 4: incorrect username</name>
+            <prolog time="2025-07-08T14:42:19.550+05:30">
+                <name>Test 20k_Max</name>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>61</lineNo>
+                    <lineNo>69</lineNo>
                 </location>
             </prolog>
-            <message time="2025-04-03T07:41:49.302Z" type="LOG">
+            <message time="2025-07-08T14:42:19.550+05:30" type="LOG">
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>64</lineNo>
+                    <lineNo>70</lineNo>
                 </location>
-                <text>entered incorrect username.</text>
+                <text>Testing 20k_Max: 10.000</text>
+            </message>
+            <message time="2025-07-08T14:42:19.550+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>77</lineNo>
+                </location>
+                <text>clicking on time in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:42:19.876+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:42:22.174+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
             </message>
             <verification>
                 <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>97</lineNo>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>75</lineNo>
                 </location>
-                <scriptedVerificationResult time="2025-04-03T07:41:50.318Z" type="PASS">
+                <scriptedVerificationResult time="2025-07-08T14:42:22.406+05:30" type="PASS">
                     <scriptedLocation>
-                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                        <lineNo>97</lineNo>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>75</lineNo>
                     </scriptedLocation>
-                    <text>Text verification passed!</text>
+                    <text>Entered value matches expected max value: 10.000</text>
                 </scriptedVerificationResult>
             </verification>
-            <message time="2025-04-03T07:41:50.319Z" type="LOG">
-                <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>86</lineNo>
-                </location>
-                <text>Clicking on the pop up okay button</text>
-            </message>
-            <epilog time="2025-04-03T07:41:52.718Z"></epilog>
+            <epilog time="2025-07-08T14:42:22.406+05:30"></epilog>
         </test>
         <test type="section">
-            <prolog time="2025-04-03T07:41:52.718Z">
-                <name>test case 5: incorrect password</name>
+            <prolog time="2025-07-08T14:42:25.540+05:30">
+                <name>Test 20k_Min</name>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>73</lineNo>
+                    <lineNo>54</lineNo>
                 </location>
             </prolog>
-            <message time="2025-04-03T07:41:55.302Z" type="LOG">
+            <message time="2025-07-08T14:42:25.540+05:30" type="LOG">
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>76</lineNo>
+                    <lineNo>55</lineNo>
                 </location>
-                <text>entered incorrect password.</text>
+                <text>Testing 20k_Min: 0.010</text>
+            </message>
+            <message time="2025-07-08T14:42:25.540+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>77</lineNo>
+                </location>
+                <text>clicking on time in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:42:25.846+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:42:28.098+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
             </message>
             <verification>
                 <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>97</lineNo>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>60</lineNo>
                 </location>
-                <scriptedVerificationResult time="2025-04-03T07:41:56.436Z" type="PASS">
+                <scriptedVerificationResult time="2025-07-08T14:42:28.334+05:30" type="PASS">
                     <scriptedLocation>
-                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                        <lineNo>97</lineNo>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>60</lineNo>
                     </scriptedLocation>
-                    <text>Text verification passed!</text>
+                    <text>Entered value matches expected min value: 0.010</text>
                 </scriptedVerificationResult>
             </verification>
-            <message time="2025-04-03T07:41:56.437Z" type="LOG">
-                <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>86</lineNo>
-                </location>
-                <text>Clicking on the pop up okay button</text>
-            </message>
-            <epilog time="2025-04-03T07:41:58.796Z"></epilog>
+            <epilog time="2025-07-08T14:42:28.334+05:30"></epilog>
         </test>
         <test type="section">
-            <prolog time="2025-04-03T07:41:58.796Z">
-                <name>test case 6: incorrect credentials</name>
+            <prolog time="2025-07-08T14:42:31.484+05:30">
+                <name>Test 20k_Max + 1 (Out of Range)</name>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
                     <lineNo>85</lineNo>
                 </location>
             </prolog>
-            <message time="2025-04-03T07:42:00.796Z" type="LOG">
+            <message time="2025-07-08T14:42:31.485+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+                <text>Testing 20k_Max + 1: 11.0</text>
+            </message>
+            <message time="2025-07-08T14:42:31.485+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>77</lineNo>
+                </location>
+                <text>clicking on time in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:42:31.793+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:42:34.040+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>93</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:42:34.269+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>93</lineNo>
+                    </scriptedLocation>
+                    <text>Entered value matches expected max plus one value: 11.0</text>
+                </scriptedVerificationResult>
+            </verification>
+            <epilog time="2025-07-08T14:42:34.533+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:42:37.540+05:30">
+                <name>Test 20k_Min - 1 (Out of Range)</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>108</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:42:37.540+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>109</lineNo>
+                </location>
+                <text>Testing 20k_Min - 1: -0.99</text>
+            </message>
+            <message time="2025-07-08T14:42:37.540+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>77</lineNo>
+                </location>
+                <text>clicking on time in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:42:37.826+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:42:40.093+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>116</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:42:40.331+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>116</lineNo>
+                    </scriptedLocation>
+                    <text>Entered value matches expected max minus one value: -0.99</text>
+                </scriptedVerificationResult>
+            </verification>
+            <epilog time="2025-07-08T14:42:40.594+05:30"></epilog>
+        </test>
+        <epilog time="2025-07-08T14:42:43.540+05:30"></epilog>
+    </test>
+
+    <test type="testcase">
+        <prolog time="2025-07-08T14:42:46.256+05:30">
+            <name>tst_recipe_energy_quick_edit_40K</name>
+            <location>
+                <uri><![CDATA[x-testsuite:/tst_recipe_energy_quick_edit_40K]]></uri>
+            </location>
+        </prolog>
+        <message time="2025-07-08T14:42:46.340+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>126</lineNo>
+            </location>
+            <text>Starting to log into the system</text>
+        </message>
+        <message time="2025-07-08T14:43:06.681+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>14</lineNo>
+            </location>
+            <text>System logged in successfully!</text>
+        </message>
+        <message time="2025-07-08T14:43:06.689+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/helper/core.py]]></uri>
+                <lineNo>79</lineNo>
+            </location>
+            <text>Recipe</text>
+        </message>
+        <message time="2025-07-08T14:43:06.689+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>130</lineNo>
+            </location>
+            <text>Completed the notifications pop skipping</text>
+        </message>
+        <message time="2025-07-08T14:43:08.589+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[x-testcase:/test.py]]></uri>
+                <lineNo>22</lineNo>
+            </location>
+            <text>Started with creation of new recipe</text>
+        </message>
+        <message time="2025-07-08T14:43:10.874+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>52</lineNo>
+            </location>
+            <text>clicked on the dashboard</text>
+        </message>
+        <message time="2025-07-08T14:43:15.181+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>56</lineNo>
+            </location>
+            <text>Clicked on the recipes of the left panel</text>
+        </message>
+        <message time="2025-07-08T14:43:15.182+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>57</lineNo>
+            </location>
+            <text>trying to enter recipe swipe view</text>
+        </message>
+        <message time="2025-07-08T14:43:16.100+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>61</lineNo>
+            </location>
+            <text>Clicked on the plus sign of recipe creation</text>
+        </message>
+        <message time="2025-07-08T14:43:16.100+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>64</lineNo>
+            </location>
+            <text>CLicked on energy tab</text>
+        </message>
+        <message time="2025-07-08T14:43:19.541+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>68</lineNo>
+            </location>
+            <text>clicking on energy in quick edit</text>
+        </message>
+        <message time="2025-07-08T14:43:19.853+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                <lineNo>172</lineNo>
+            </location>
+            <text>clear the number pad</text>
+        </message>
+        <test type="section">
+            <prolog time="2025-07-08T14:43:22.117+05:30">
+                <name>Test 40K_Default Displayed Value</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>34</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:43:22.117+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>35</lineNo>
+                </location>
+                <text>Testing 40K_Default: 1</text>
+            </message>
+            <message time="2025-07-08T14:43:22.126+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>38</lineNo>
+                </location>
+                <text>Checking if the default value matches with the actual data</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>42</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:43:22.126+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>42</lineNo>
+                    </scriptedLocation>
+                    <text>Displayed value matches expected default: 1</text>
+                </scriptedVerificationResult>
+            </verification>
+            <epilog time="2025-07-08T14:43:22.126+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:43:22.126+05:30">
+                <name>Test 40K_Max</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>70</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:43:22.126+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>71</lineNo>
+                </location>
+                <text>Testing 40K_Max: 24000</text>
+            </message>
+            <message time="2025-07-08T14:43:22.126+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>68</lineNo>
+                </location>
+                <text>clicking on energy in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:43:22.427+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:43:24.680+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>76</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:43:24.914+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>76</lineNo>
+                    </scriptedLocation>
+                    <text>Entered value matches expected max value: 24000</text>
+                </scriptedVerificationResult>
+            </verification>
+            <epilog time="2025-07-08T14:43:24.915+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:43:28.040+05:30">
+                <name>Test 40K_Min</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>55</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:43:28.040+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>56</lineNo>
+                </location>
+                <text>Testing 40K_Min: 1</text>
+            </message>
+            <message time="2025-07-08T14:43:28.040+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>68</lineNo>
+                </location>
+                <text>clicking on energy in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:43:28.347+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:43:30.567+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
+            </message>
+            <verification>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>61</lineNo>
+                </location>
+                <scriptedVerificationResult time="2025-07-08T14:43:30.797+05:30" type="PASS">
+                    <scriptedLocation>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>61</lineNo>
+                    </scriptedLocation>
+                    <text>Entered value matches expected min value: 1</text>
+                </scriptedVerificationResult>
+            </verification>
+            <epilog time="2025-07-08T14:43:30.798+05:30"></epilog>
+        </test>
+        <test type="section">
+            <prolog time="2025-07-08T14:43:33.948+05:30">
+                <name>Test 40K_Max + 1 (Out of Range)</name>
+                <location>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>86</lineNo>
+                </location>
+            </prolog>
+            <message time="2025-07-08T14:43:33.949+05:30" type="LOG">
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
                     <lineNo>87</lineNo>
                 </location>
-                <text>entered incorrect username and password.</text>
+                <text>Testing 40K_Max + 1: 24001.0</text>
+            </message>
+            <message time="2025-07-08T14:43:33.949+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>68</lineNo>
+                </location>
+                <text>clicking on energy in quick edit</text>
+            </message>
+            <message time="2025-07-08T14:43:34.255+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
+                </location>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:43:36.541+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
             </message>
             <verification>
                 <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>97</lineNo>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>94</lineNo>
                 </location>
-                <scriptedVerificationResult time="2025-04-03T07:42:02.429Z" type="PASS">
+                <scriptedVerificationResult time="2025-07-08T14:43:36.805+05:30" type="PASS">
                     <scriptedLocation>
-                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                        <lineNo>97</lineNo>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>94</lineNo>
                     </scriptedLocation>
-                    <text>Text verification passed!</text>
+                    <text>Entered value matches expected max plus one value: 24001.0</text>
                 </scriptedVerificationResult>
             </verification>
-            <message time="2025-04-03T07:42:02.429Z" type="LOG">
-                <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/login.py]]></uri>
-                    <lineNo>86</lineNo>
-                </location>
-                <text>Clicking on the pop up okay button</text>
-            </message>
-            <epilog time="2025-04-03T07:42:04.797Z"></epilog>
+            <epilog time="2025-07-08T14:43:37.082+05:30"></epilog>
         </test>
         <test type="section">
-            <prolog time="2025-04-03T07:42:04.797Z">
-                <name>test case 1: positive test scenario with valid credentials</name>
+            <prolog time="2025-07-08T14:43:40.040+05:30">
+                <name>Test 40K_Min - 1 (Out of Range)</name>
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>24</lineNo>
+                    <lineNo>109</lineNo>
                 </location>
             </prolog>
-            <message time="2025-04-03T07:42:06.797Z" type="LOG">
+            <message time="2025-07-08T14:43:40.040+05:30" type="LOG">
                 <location>
                     <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>26</lineNo>
+                    <lineNo>110</lineNo>
                 </location>
-                <text>Step 1: Enter username ADMIN</text>
+                <text>Testing 40K_Min - 1: 0.0</text>
             </message>
-            <message time="2025-04-03T07:42:07.302Z" type="LOG">
+            <message time="2025-07-08T14:43:40.040+05:30" type="LOG">
                 <location>
-                    <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>28</lineNo>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>68</lineNo>
                 </location>
-                <text>Step 2: Enter password Emerson@1</text>
+                <text>clicking on energy in quick edit</text>
             </message>
-            <message time="2025-04-03T07:42:07.806Z" type="LOG">
+            <message time="2025-07-08T14:43:40.327+05:30" type="LOG">
                 <location>
-                    <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>30</lineNo>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>172</lineNo>
                 </location>
-                <text>Step 3: Click on Login button.</text>
+                <text>clear the number pad</text>
+            </message>
+            <message time="2025-07-08T14:43:42.560+05:30" type="LOG">
+                <location>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/recipe.py]]></uri>
+                    <lineNo>160</lineNo>
+                </location>
+                <text>saving the number</text>
             </message>
             <verification>
                 <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/dashboard.py]]></uri>
-                    <lineNo>9</lineNo>
+                    <uri><![CDATA[x-testcase:/test.py]]></uri>
+                    <lineNo>117</lineNo>
                 </location>
-                <scriptedVerificationResult time="2025-04-03T07:42:28.453Z" type="PASS">
+                <scriptedVerificationResult time="2025-07-08T14:43:42.803+05:30" type="PASS">
                     <scriptedLocation>
-                        <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/dashboard.py]]></uri>
-                        <lineNo>9</lineNo>
+                        <uri><![CDATA[x-testcase:/test.py]]></uri>
+                        <lineNo>117</lineNo>
                     </scriptedLocation>
-                    <text>Logged in successfully</text>
+                    <text>Entered value matches expected max minus one value: 0.0</text>
                 </scriptedVerificationResult>
             </verification>
-            <message time="2025-04-03T07:42:29.226Z" type="LOG">
-                <location>
-                    <uri><![CDATA[file:///home/sneha/thinclient_drives/C:/MASHER/screens/dashboard.py]]></uri>
-                    <lineNo>10</lineNo>
-                </location>
-                <text>Dashboard is visible</text>
-            </message>
-            <message time="2025-04-03T07:42:29.226Z" type="LOG">
-                <location>
-                    <uri><![CDATA[x-testcase:/test.py]]></uri>
-                    <lineNo>33</lineNo>
-                </location>
-                <text>Expected Result: Admin user with valid credentials shall get logged in to the system</text>
-            </message>
-            <epilog time="2025-04-03T07:42:31.297Z"></epilog>
+            <epilog time="2025-07-08T14:43:43.078+05:30"></epilog>
         </test>
-        <epilog time="2025-04-03T07:42:31.297Z"></epilog>
+        <message time="2025-07-08T14:43:46.040+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                <lineNo>147</lineNo>
+            </location>
+            <text>Starting to logout from the system</text>
+        </message>
+        <verification>
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                <lineNo>156</lineNo>
+            </location>
+            <scriptedVerificationResult time="2025-07-08T14:43:47.652+05:30" type="PASS">
+                <scriptedLocation>
+                    <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                    <lineNo>156</lineNo>
+                </scriptedLocation>
+                <text>Comparison</text>
+                <detail>'Are you sure want to logout?' and 'Are you sure want to logout?' are equal</detail>
+            </scriptedVerificationResult>
+        </verification>
+        <message time="2025-07-08T14:43:48.975+05:30" type="LOG">
+            <location>
+                <uri><![CDATA[file:///home/branson/Downloads/Masher_new/screens/login.py]]></uri>
+                <lineNo>160</lineNo>
+            </location>
+            <text>Completed logout from the system</text>
+        </message>
+        <epilog time="2025-07-08T14:43:48.976+05:30"></epilog>
     </test>
 
-        <epilog time="2025-04-03T07:42:33.508404Z"></epilog>
+        <epilog time="2025-07-08T14:43:51.153387+05:30"></epilog>
     </test>
 </SquishReport>
